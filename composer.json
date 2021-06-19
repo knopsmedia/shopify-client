@@ -1,0 +1,23 @@
+{
+    "name": "knops/shopify-client",
+    "type": "library",
+    "description": "Shopify Client",
+    "license": "proprietary",
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Knops\\Shopify\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Knops\\ShopifyTests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}
