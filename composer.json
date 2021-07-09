@@ -9,12 +9,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Knops\\Shopify\\": "src"
+            "Knops\\ShopifyClient\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Knops\\ShopifyTests\\": "tests"
+            "Knops\\ShopifyClientTests\\": "tests"
         }
     },
     "require": {
