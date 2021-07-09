@@ -2,15 +2,8 @@
 
 namespace Knops\ShopifyClient;
 
-final class ProductApi
+final class ProductApi extends AbstractServiceEndpoint
 {
-    private ApiClient $shopifyApi;
-
-    public function __construct(ApiClient $shopifyApi)
-    {
-        $this->shopifyApi = $shopifyApi;
-    }
-
     public function findOneByHandle(string $handle): ?object
     {
         $all = $this->findAllByHandles([$handle]);

@@ -2,15 +2,8 @@
 
 namespace Knops\ShopifyClient;
 
-final class InventoryLevelApi
+final class InventoryLevelApi extends AbstractServiceEndpoint
 {
-    private ApiClient $shopifyApi;
-
-    public function __construct(ApiClient $shopifyApi)
-    {
-        $this->shopifyApi = $shopifyApi;
-    }
-
     public function getInventoryLevels(array $inventoryItemIds): array
     {
         $inventoryLevels = $this->shopifyApi->request('GET', '/inventory_levels.json', query: [

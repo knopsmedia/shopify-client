@@ -4,21 +4,15 @@ namespace Knops\ShopifyClient;
 
 final class ApiClient
 {
-    private string $apiAccessToken;
-    private string $shopUrl;
-    private string $apiVersion;
-    private bool $debugMode = true;
-
     private ?object $lastResponse = null;
     private float $lastRequestTime = .0;
     private float $requestDelay = 0.5;
 
-    public function __construct(string $shopUrl, string $apiVersion, string $apiAccessToken)
-    {
-        $this->shopUrl = $shopUrl;
-        $this->apiVersion = $apiVersion;
-        $this->apiAccessToken = $apiAccessToken;
-    }
+    public function __construct(
+        private string $shopUrl,
+        private string $apiVersion,
+        private string $apiAccessToken,
+    ) {}
 
     public function products(): ProductApi
     {
@@ -33,6 +27,11 @@ final class ApiClient
     public function inventoryLevels(): InventoryLevelApi
     {
         return new InventoryLevelApi($this);
+    }
+
+    public function orders(): OrderApi
+    {
+        return new OrderApi($this);
     }
 
     public function request(string $method, string $path, array $body = [], array $query = [], array $headers = []): object

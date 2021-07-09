@@ -2,15 +2,8 @@
 
 namespace Knops\ShopifyClient;
 
-final class ProductVariantApi
+final class ProductVariantApi extends AbstractServiceEndpoint
 {
-    private ApiClient $shopifyApi;
-
-    public function __construct(ApiClient $shopifyApi)
-    {
-        $this->shopifyApi = $shopifyApi;
-    }
-
     public function create(int $productId, array $data): bool
     {
         try {
