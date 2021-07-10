@@ -7,10 +7,10 @@ final class ApiClient
     private ?object $lastResponse = null;
     private float $lastRequestTime = .0;
     private float $requestDelay = 0.5;
+    private string $apiVersion = '2021-07';
 
     public function __construct(
         private string $shopUrl,
-        private string $apiVersion,
         private string $apiAccessToken,
     ) {}
 
